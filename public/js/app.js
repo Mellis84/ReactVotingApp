@@ -58,7 +58,7 @@ class ProductList extends React.Component {
 		));
 
         return (
-			<div className='ui unstackable items'>
+			<div className='items'>
 				{productComponents}
 			</div>
         );
@@ -94,19 +94,14 @@ class Product extends React.Component {
 						{this.props.votes}
 					</div>
                     <div className="description">
-                        <a href={this.props.url}>
-							{this.props.title}
-						</a>
+						<h3>
+							<a href={this.props.url}>
+								{this.props.title}
+							</a>
+						</h3>
                         <p>
 							{this.props.description}
 						</p>
-                    </div>
-                    <div className="extra">
-                        <span>Submitted by:</span>
-                        <img
-                            className="ui avatar image"
-                            src={this.props.submitterAvatarUrl}
-                        />
                     </div>
                 </div>
             </div>
