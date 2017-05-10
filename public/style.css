@@ -27,7 +27,7 @@ body {
   font-family: "Open Sans";
   font-size: 14px;
   line-height: 1.42857143;
-  color: #747474;
+  color: #737475;
   background-color: #f7f8f9;
   margin: 0;
 }
@@ -42,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+p {
+	margin: 0 0 1em;
+}
+
 h1,
 h2,
 h3,
@@ -51,10 +55,21 @@ h4 {
   color: #212121;
 }
 
+h1 {
+	text-align: center;
+}
+
+.wrapper {
+	display: flex;
+	flex: 1;
+	min-height: 100vh;
+	align-items: center;
+}
+
 .container {
-  width: 90%;
-  max-width: 860px;
-  margin: 0 auto;
+	width: 90%;
+	max-width: 860px;
+	margin: 0 auto;
 }
 
 .items {
@@ -63,21 +78,102 @@ h4 {
 }
 
 .item {
-  margin-bottom: 30px;
-  background: #fff;
-  border-radius: 8px;
-  overflow: auto;
-  flex: 1 1 auto;
+	margin-bottom: 30px;
+	background: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	flex: 1 1 auto;
+	display: table;
+	vertical-align: middle;
+}
+
+.image,
+.content {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .image {
-  width: 30%;
-  float: left;
+	width: 33.9%;
+}
+
+.content-container {
+	padding: 1em 2em;
+}
+
+.header {
+	overflow: auto;
+}
+
+.upvotes {
+	float: right;
+}
+
+.upvotes .icon {
+	background-image: url('./images/caret-arrow-up.svg');
+    height: 13px;
+	width: 16px;
+    background-size: cover;
+    display: inline-block;
+    margin-right: 0.5em;
+	cursor: pointer;
+	opacity: 0.75;
+	transition: 150ms ease opacity;
+}
+
+.upvotes .icon:hover {
+	opacity: 0.9;
+}
+
+.upvotes .upvotes__upvote-count {
+	background-color: #2399ff;
+	display: inline-block;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 12px;
+	line-height: 2.2;
 }
 
 .description h3 {
-    margin: 10px 0px 5px 0;
     font-size: 22px;
     display: inline;
-    margin-right: 15px;
+}
+
+.description h3 a {
+	color: inherit;
+}
+
+.description p {
+	font-weight: 300;
+}
+
+/* Description footer */
+
+.footer {
+	overflow: auto;
+}
+
+.footer .tags {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+
+.footer .tags span {
+	display: inline-block;
+	line-height: 27px;
+	height: 27px;
+	border: 1px solid #E6E6E6;
+	border-radius: 3px;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	color: #747474;
+	padding: 0px 15px;
+	text-decoration: none;
+	margin: 5px;
 }

@@ -51,9 +51,9 @@ class ProductList extends React.Component {
 				description={product.description}
 				url={product.url}
 				votes={product.votes}
-				submitterAvatarUrl={product.submitterAvatarUrl}
 				productImageUrl={product.productImageUrl}
 				onVote={this.handleProductUpVote}
+				tags={product.tags}
 			/>
 		));
 
@@ -86,23 +86,34 @@ class Product extends React.Component {
                 <div className="image">
                     <img src={this.props.productImageUrl} />
                 </div>
-                <div className="middle aligned content">
-					<div className="header">
-						<a onClick={this.handleUpVote}>
-							<i className="large caret up icon" />
-						</a>
-						{this.props.votes}
+                <div className="content">
+					<div className="content-container">
+	                    <div className="description">
+							<div className="header">
+								<div className="upvotes">
+									<a onClick={this.handleUpVote}>
+										<i className="icon" />
+									</a>
+									<span className="upvotes__upvote-count">
+										{this.props.votes}
+									</span>
+								</div>
+							</div>
+							<h3>
+								<a href={this.props.url}>
+									{this.props.title}
+								</a>
+							</h3>
+	                        <p>
+								{this.props.description}
+							</p>
+							<div className="footer">
+								<ul className="tags">
+									<li><span>{this.props.tags}</span></li>
+								</ul>
+							</div>
+	                    </div>
 					</div>
-                    <div className="description">
-						<h3>
-							<a href={this.props.url}>
-								{this.props.title}
-							</a>
-						</h3>
-                        <p>
-							{this.props.description}
-						</p>
-                    </div>
                 </div>
             </div>
         );
