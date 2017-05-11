@@ -1,14 +1,9 @@
 
 class ProductList extends React.Component {
 
-	constructor(props) {
-		super(props);
-
-		this.state = {
-		  products: [],
-		};
-
-		this.handleProductUpVote = this.handleProductUpVote.bind(this);
+	// Initial state
+	state = {
+		products: [],
 	}
 
 	componentDidMount() {
@@ -16,7 +11,7 @@ class ProductList extends React.Component {
 	}
 
 	// Pass a function to the product/child components props
-	handleProductUpVote(productId) {
+	handleProductUpVote = (productId) => {
 		const nextProducts = this.state.products.map((product) => {
 			// if current product matches product.id
 			if (product.id === productId) {
@@ -67,6 +62,7 @@ class ProductList extends React.Component {
 
 class Product extends React.Component {
 
+	/* If we are not using Babels property initializer plugin we do this
 	// when defining custom component methods, we have to manually bind
 	// this to the component
 	constructor(props) {
@@ -79,6 +75,12 @@ class Product extends React.Component {
 	handleUpVote() {
 		this.props.onVote(this.props.id)
 	}
+	*/
+
+	// Custom component method
+	handleUpVote = () => (
+		this.props.onVote(this.props.id)
+	);
 
     render() {
         return (
